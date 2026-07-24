@@ -4,11 +4,15 @@ pipeline{
             label 'Agent-1'
         }
     }
+    environment {
+        Greeting = "Hi This is Arun"
+    }
 
     stages {
         stage('Agent-Info') {
             steps {
                 echo "Running From Agent-1" 
+                echo "${Greeting} from Agent stage"
             }
         }
         
@@ -16,6 +20,7 @@ pipeline{
             steps {
                 echo "This is a build stage where Build packages and download dependencies everything needed for the application"
             } 
+            //for each single stage post block we can write like this
             post {
                 success {
                     echo "if build stage success only this post build runs"
@@ -33,10 +38,11 @@ pipeline{
         stage('Deployment') {
             steps {
                 echo "This is a Deployment stage where application deployed throgh VM's" 
+                echo "${Greeting} from Deployment stage"
             }
         }
     }
-
+//for total stages post block we can write like this
     post {
         always {
             echo "Always this post build runs whether pipeline failed or success or aborted or etc.. any case "
