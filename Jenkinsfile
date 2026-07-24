@@ -19,21 +19,25 @@ pipeline{
         choice(
             name:'Environment',
             choices:['DEV','QA','PROD']
-            )
-
+        )
         string(
             name:'VERSION',
             defaultValue:'1.0'
-            )
+        )
         booleanParam(
             name:'RUN_TESTS',
             defaultValue:true
-	        )   
+	    )   
         password(
 		    name:'DB_PASSWORD'
-		    )
+		)
             
-        }
+    }
+
+    options{
+	timeout(time:1, unit:'SECONDS')
+}
+    
         
 
     stages {
