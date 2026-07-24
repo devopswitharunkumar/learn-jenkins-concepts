@@ -72,6 +72,7 @@ pipeline{
             steps {
                 echo "This is a Deployment stage where application deployed throgh VM's" 
                 echo """${IMAGE_NAME}:${IMAGE_TAG}:${AWS_REGION} from Deployment stage"""
+                sleep 10
             }
         }
     }
