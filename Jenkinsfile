@@ -46,7 +46,7 @@ pipeline{
         stage('Deployment') {
             steps {
                 echo "This is a Deployment stage where application deployed throgh VM's" 
-                echo """${IMAGE_NAME}:${1.0"}:${AWS_REGION} from Deployment stage"""
+                echo """${IMAGE_NAME}:${1.0}:${AWS_REGION} from Deployment stage"""
             }
         }
     }
