@@ -52,7 +52,7 @@ pipeline{
         stage('Added Triggers') {
             steps {
                 echo "Added Triggers" 
-                echo "${Greeting}, ${NAME} from Agent stage from WebHook"
+                echo "${Greeting}, ${NAME} from trigger stage from WebHook"
             }
         }
         
