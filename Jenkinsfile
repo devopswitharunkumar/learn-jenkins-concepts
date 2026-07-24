@@ -35,8 +35,9 @@ pipeline{
     }
 
     options{
-	timeout(time:1, unit:'SECONDS')
-}
+	timeout(time:1, unit:'HOURS')
+    disableConcurrentBuilds()
+    }
     
         
 
@@ -72,7 +73,7 @@ pipeline{
             steps {
                 echo "This is a Deployment stage where application deployed throgh VM's" 
                 echo """${IMAGE_NAME}:${IMAGE_TAG}:${AWS_REGION} from Deployment stage"""
-                sleep 10
+                // sleep 10
             }
         }
     }
@@ -92,4 +93,8 @@ pipeline{
         }
      
     }
+
 }
+
+
+// inside pipeline block we cant write multiple stages blocks only one stages block and inside stage block we cant have multiple steps blocks only one steps block with multiple steps in it and can have multiple stage blocks in one stages block
