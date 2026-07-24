@@ -6,7 +6,7 @@ pipeline{
     }
     environment {
         Greeting = "Hello, Good Morning"
-        NAME="Arun"
+        NAME="ArunKumar"
 
         IMAGE_NAME="payment"
 
@@ -46,6 +46,13 @@ pipeline{
             steps {
                 echo "Running From Agent-1" 
                 echo "${Greeting}, ${NAME} from Agent stage"
+            }
+        }
+
+        stage('Added Triggers') {
+            steps {
+                echo "Added Triggers" 
+                echo "${Greeting}, ${NAME} from Agent stage from WebHook"
             }
         }
         
