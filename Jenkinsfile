@@ -5,20 +5,28 @@ pipeline{
         }
     }
     environment {
-        Greeting = "Hi This is Arun"
+        Greeting = "Hello, Good Morning"
+        NAME="Arun"
+
+        IMAGE_NAME="payment"
+
+        IMAGE_TAG="1.0"
+
+        AWS_REGION="us-east-1"
     }
 
     stages {
         stage('Agent-Info') {
             steps {
                 echo "Running From Agent-1" 
-                echo "${Greeting} from Agent stage"
+                echo "${Greeting}, ${NAME} from Agent stage"
             }
         }
         
         stage('Build') {
             steps {
                 echo "This is a build stage where Build packages and download dependencies everything needed for the application"
+                echo "${IMAGE_NAME}, ${1.0"} and ${AWS_REGION} from build stage"
             } 
             //for each single stage post block we can write like this
             post {
@@ -38,7 +46,7 @@ pipeline{
         stage('Deployment') {
             steps {
                 echo "This is a Deployment stage where application deployed throgh VM's" 
-                echo "${Greeting} from Deployment stage"
+                echo "${IMAGE_NAME}, ${1.0"} and ${AWS_REGION} from Deployment stage"
             }
         }
     }
