@@ -14,7 +14,7 @@ pipeline{
         
         stage('Build') {
             steps {
-                echo "This is a build stage where Build packages and download dependencies everything needed for the application"
+                echo "This is a build stage where Build packages and download dependencies everything needed for the application
             } 
             post {
                 success {
