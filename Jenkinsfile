@@ -16,13 +16,13 @@ pipeline{
             steps {
                 echo "This is a build stage where Build packages and download dependencies everything needed for the application"
             } 
-        }
-        post {
-            success {
-                echo "if build stage success only this post build runs"
-            }
-            failure {
-                echo "if build stage fails only this post build runs"
+            post {
+                success {
+                    echo "if build stage success only this post build runs"
+                }
+                failure {
+                    echo "if build stage fails only this post build runs"
+                }
             }
         }
         stage('Testing') {
