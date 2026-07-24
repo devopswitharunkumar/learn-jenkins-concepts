@@ -4,10 +4,10 @@ pipeline{
     //         label 'Agent-1'
     //     }
     // }
-    agent any
+    agent any 
     environment {
         Greeting = "Hello, Good Morning"
-        NAME="ArunKumar"
+        NAME="ArunKumarReddy"
 
         IMAGE_NAME="payment"
 
