@@ -13,7 +13,28 @@ pipeline{
         IMAGE_TAG="1.0"
 
         AWS_REGION="us-east-1"
-    }
+    } 
+
+    parameters{
+        choice(
+            name:'Environment',
+            choices:['DEV','QA','PROD']
+            )
+
+        string(
+            name:'VERSION',
+            defaultValue:'1.0'
+            )
+        booleanParam(
+            name:'RUN_TESTS',
+            defaultValue:true
+	        )   
+        password(
+		    name:'DB_PASSWORD'
+		    )
+            
+        }
+        
 
     stages {
         stage('Agent-Info') {
