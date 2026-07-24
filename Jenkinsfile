@@ -50,6 +50,6 @@ pipeline{
         aborted {
             echo "if pipeline aborted only this post build runs"
         }
-        #etcc diff types available
+     
     }
 }
