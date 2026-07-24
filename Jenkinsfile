@@ -27,4 +27,19 @@ pipeline{
             }
         }
     }
+
+    post {
+        always {
+            echo "Always this post build runs whether pipeline failed or success or aborted or etc.. any case "
+        }
+        success {
+            echo "if pipeline success only this post build runs"
+        }
+        failure {
+            echo "if pipeline failes only this post build runs"
+        }
+        aborted {
+            echo "if pipeline aborted only this post build runs"
+        }
+    }
 }
