@@ -26,7 +26,7 @@ pipeline{
         stage('Build') {
             steps {
                 echo "This is a build stage where Build packages and download dependencies everything needed for the application"
-                echo "${IMAGE_NAME}:${1.0"}:${AWS_REGION} from build stage"
+                echo """${IMAGE_NAME}:${1.0"}:${AWS_REGION} from build stage"""
             } 
             //for each single stage post block we can write like this
             post {
@@ -46,7 +46,7 @@ pipeline{
         stage('Deployment') {
             steps {
                 echo "This is a Deployment stage where application deployed throgh VM's" 
-                echo "${IMAGE_NAME}:${1.0"}:${AWS_REGION} from Deployment stage"
+                echo """${IMAGE_NAME}:${1.0"}:${AWS_REGION} from Deployment stage"""
             }
         }
     }
