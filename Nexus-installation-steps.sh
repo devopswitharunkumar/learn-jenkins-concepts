@@ -8,7 +8,7 @@ echo "===================================="
 
 # Update system
 echo "Updating system packages..."
-dnf update -y
+# dnf update -y
 
 # Install Java and required packages
 echo "Installing Java and utilities..."
